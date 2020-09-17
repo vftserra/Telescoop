@@ -1,0 +1,252 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="loan.js"></script>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>TELESCOOP LOAN</h3>
+        <div class="menu">
+            <label><input type="radio" name="loanforms" value="DS">Direct Selling Loan</label><br>
+            <label><input type="radio" name="loanforms" value="FL">Financial Loan</label><br>
+            <label><input type="radio" name="loanforms" value="MPL">Multi-Purpose Loan</label><br>
+            <label><input type="radio" name="loanforms" value="FSD">Financial Services and Development Loan</label>
+        </div>
+
+        <!-- Direct Selling form-->
+        <div class="form" id="FORM-DS">
+            <form id="DS">
+                <h4>Direct Selling Form</h4>
+                Search Product:
+                <input type="text" placeholder="Search..">
+                <input type="submit" value="Add">
+                <table style="width:100%">
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Product Description</th>
+                        <th>Cost</th>   
+                        <th>Interest Rate</th>
+                        <th>Gross</th>
+                        <th>No. of Pay Days</th>
+                        <th>Semi Monthly</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sample 2</td>
+                        <td>PHP 10,000.</td>
+                        <td>5%</td>
+                        <td>N/A</td>
+                        <td>12 Months</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sample</td>
+                        <td>PHP 50,000.</td>
+                        <td>25%</td>
+                        <td>N/A</td>
+                        <td>60 Months</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Sample</td>
+                        <td>PHP 295,000.</td>
+                        <td>15%</td>
+                        <td>N/A</td>
+                        <td>12 Months</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Sample</td>
+                        <td>PHP 210,000.</td>
+                        <td>5%</td>
+                        <td>N/A</td>
+                        <td>12 Months</td>
+                        <td>N/A</td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+        <!--Financial form-->
+        <div class="form" id="FORM-FL">
+            <form id="FS">
+                <h4>Financial form</h4>
+                1.)<b>Select your Loan Type:</b><br>
+                <input type="radio" name=opt1>Financial Services & Development Loan JR. (PHP 75,000) <br>
+                <input type="radio" name=opt1>Financial Services & Development Loan Lite (PHP 25,000) <br>
+                <input type="radio" name=opt1>TELESCOOP Economic Assistance Mode (PHP 100,000)<br>
+                <input type="radio" name=opt1>Financial Loss Express (PHP 6,000)<br>
+                <input type="radio" name=opt1>School Financial Loan (PHP 50,000<br>
+                <input type="radio" name=opt1>School Supplies Loan (PHP 12,000)<br>
+                <input type="radio" name=opt1>Tuition Fee Loan (PHP)<br>
+                <input type="radio" name=opt1>Emergency Calamity and Multi-Purpose Loan (PHP)<br>
+                <input type="radio" name=opt1>Travel Loan (PHP 1,000,000) [Maximum]<br>
+                <input type="radio" name=opt1>Others<br>
+                Specify:<input type="text"> <br>
+
+                2.) <b>Select the Payment Terms</b><br>
+                <select name=payment_terms" id="payment_terms">
+                    <option value="PaymentTerms">Please Select a Payment Terms...</option>
+                    <option value="12">12 Months or 1 Year</option>
+                    <option value="24">24 Months or 2 Years</option>
+                    <option value="36">36 Months or 3 Years</option>
+                    <option value="48">48 Months or 4 Years</option>
+                    <option value="60">60 Months or 5 Years</option>
+                </select>
+                <br>
+                3.) <b>Computation</b>
+                <table style="width:100%">
+                    <tr>
+                        <th>Loan Type</th>
+                        <th>Tuition Fee Loan</th>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>PHP 10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Number of Terms</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Interest/Service Charge</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>Gross Loan</td>
+                        <td>PHP 10,500.00</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Amortization</td>
+                        <td>PHP 833.83</td>
+                    </tr>
+                    <tr>
+                        <td>Net Proceeds</td>
+                        <td>PHP 9,500.00</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!--Multi-Purpose form -->
+        <div class="form" id="FORM-MPL">
+            <form id="MPL" class>
+                <h2>Multi-Purpose form</h2>
+                1.)<b>Select your Loan Type:</b> <br>
+                <input type="radio" name=opt2>Unused Sick Leave (USL)<br>
+                <input type="radio" name=opt2>Longevity Pay (LGP)<br>
+                <input type="radio" name=opt2>13th Month<br>
+                <input type="radio" name=opt2>Christmas Bonus<br>
+                <input type="radio" name=opt2>Mid-Year Bonus<br>
+                <input type="radio" name=opt2>Others<br>
+                Specify:<input type="text"> <br>
+
+                2.) <b>Select the Payment Terms</b><br>
+                <select name=payment_terms" id="payment_terms">
+                    <option value="PaymentTerms">Please Select a Payment Terms...</option>
+                    <option value="12">12 Months or 1 Year</option>
+                    <option value="24">24 Months or 2 Years</option>
+                    <option value="36">36 Months or 3 Years</option>
+                    <option value="48">48 Months or 4 Years</option>
+                    <option value="60">60 Months or 5 Years</option>
+                </select>
+                <br>
+                3.) <b>Computation</b>
+                <table style="width:100%">
+                    <tr>
+                        <th>Loan Type</th>
+                        <th>Tuition Fee Loan</th>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>PHP 10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Number of Terms</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Interest/Service Charge</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>Gross Loan</td>
+                        <td>PHP 10,500.00</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Amortization</td>
+                        <td>PHP 833.83</td>
+                    </tr>
+                    <tr>
+                        <td>Net Proceeds</td>
+                        <td>PHP 9,500.00</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!-- Financial Services and Development form-->
+        <div class="form" id="FORM-FSD">
+            <form id="FSD">
+                <h2>Financial Services and Development form</h2>
+                1.)<b>Please Select your Loan Amount</b> <br>
+                <input type="radio" name=opt3>PHP 300,000.00 <br>
+                <input type="radio" name=opt3>PHP 400,000.00 <br>
+                <input type="radio" name=opt3>PHP 500,000.00 <br>
+
+                2.)<b>Select the Payment Terms</b><br>
+                <select name="payment_terms" id="payment_terms">
+                    <option value="PaymentTerms">Please Select a Payment Terms...</option>
+                    <option value="12">12 Months or 1 Year</option>
+                    <option value="24">24 Months or 2 Years</option>
+                    <option value="36">36 Months or 3 Years</option>
+                    <option value="48">48 Months or 4 Years</option>
+                    <option value="60">60 Months or 5 Years</option>
+                </select>
+                3.)<b>Computation</b>
+                <table style="width:100%">
+                    <tr>
+                        <td>Loan Amount</td>
+                        <td>PHP 300,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Number of Months Payable</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>Interest/Service Charge</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>Gross Loan</td>
+                        <td>PHP 315,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Deduction - SCS</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Deduction - Outstanding Loan</td>
+                        <td>PHP 250,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Net Proceeds</td>
+                        <td>PHP 9,500.00</td>
+                    </tr>
+                </table>
+                <br>
+            </form>
+            <form id="FSDSR">
+                <h2>Financial Services and Development Senior form</h2>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
