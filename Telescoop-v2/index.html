@@ -1,0 +1,265 @@
+<!DOCTYPE HTML
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Telescoop</title>
+  <link href="styles/demo_style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="styles/try.css" type="text/css">
+  <link href="styles/smart_wizard.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //  Wizard 1  	
+      $('#wizard1').smartWizard({
+        transitionEffect: 'fade',
+        onFinish: onFinishCallback,
+        onLeaveStep: leaveAStepCallback,
+      });
+      function leaveAStepCallback(obj, context) {
+        // To check and enable finish button if needed
+        if (context.fromStep >= 3) {
+          $('#wizard1').smartWizard('enableFinish', true);
+        }
+        return true;
+      }
+      //  Wizard 2
+      $('#wizard2').smartWizard({ transitionEffect: 'slide', onFinish: onFinishCallback });
+      function onFinishCallback() {
+        alert('Finish Called');
+      }
+    });
+  </script>
+  <script>
+    if (document.getElementById('agree').checked) {
+      return true;
+    }
+    else {
+      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+      return false;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Start Header -->
+  <div class="demoHead">
+    <div>
+      <div style="float:left;">
+        <h1>TELESCOOP Loan Application</h1>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+
+  <table align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <!-- <h2>Loan App Form</h2> -->
+        <!-- End Header -->
+
+        <!-- Start Wizard-->
+        <div id="wizard1" class="swMain">
+          <ul>
+            <li><a href="#step-1">
+                <label class="stepNumber">1</label>
+                <span class="stepDesc">
+                  Step 1<br />
+                  <small>Select a Loan Type</small>
+                </span>
+              </a></li>
+            <li><a href="#step-2">
+                <label class="stepNumber">2</label>
+                <span class="stepDesc">
+                  Step 2<br />
+                  <small>Fill-out the form</small>
+                </span>
+              </a></li>
+            <li><a href="#step-3">
+                <label class="stepNumber">3</label>
+                <span class="stepDesc">
+                  Step 3<br />
+                  <small>Co-Makership approval</small>
+                </span>
+              </a></li>
+            <li><a href="#step-4">
+                <label class="stepNumber">4</label>
+                <span class="stepDesc">
+                  Step 4<br />
+                  <small>Review</small>
+                </span>
+              </a></li>
+          </ul>
+
+          <!-- Start Step 1 -->
+          <div id="step-1">
+            <h2 class="StepTitle">Loan Type</h2>
+            <div class="menu">
+              <input type="radio" name="loanforms" value="DS">Direct Selling Loan<br>
+              <input type="radio" name="loanforms" value="FL">Financial Loan<br>
+              <input type="radio" name="loanforms" value="MPL">Multi-Purpose Loan<br>
+              <input type="radio" name="loanforms" value="FSD">Financial Services and Development Loan
+            </div>
+          </div>
+          <!-- End Step 1 -->
+
+          <!-- Start Step 1 -->
+          <div id="step-2">
+            <h2 class="StepTitle">Direct Selling Loan</h2>
+            <input type="text" placeholder="">
+            <input type="submit" value="Search">
+            <table style="width:100%">
+              <tr>
+                <th>Quantity</th>
+                <th>Product Description</th>
+                <th>Cost</th>
+                <th>Interest Rate</th>
+                <th>Gross</th>
+                <th>No. of Pay Days</th>
+                <th>Semi Monthly</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Sample 2</td>
+                <td>PHP 10,000.</td>
+                <td>5%</td>
+                <td>N/A</td>
+                <td>12 Months</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Sample</td>
+                <td>PHP 50,000.</td>
+                <td>25%</td>
+                <td>N/A</td>
+                <td>60 Months</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Sample</td>
+                <td>PHP 295,000.</td>
+                <td>15%</td>
+                <td>N/A</td>
+                <td>12 Months</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Sample</td>
+                <td>PHP 210,000.</td>
+                <td>5%</td>
+                <td>N/A</td>
+                <td>12 Months</td>
+                <td>N/A</td>
+              </tr>
+            </table>
+          </div>
+          <!-- End Step 2 -->
+
+          <!-- Start Step 3 -->
+          <div id="step-3">
+            <h2 class="StepTitle">Co-Maker</h2>
+            <h3>Enter Co-Maker Information</h3>
+
+            <form class="contact-form" action="co-maker.php" method="POST">
+              <strong>First Name:</strong><input type="text" id="fname" name="fname">
+              <strong>Last Name:</strong><input type="text" id="lname" name="lname">
+              <strong>Email Addres:</strong><input type="email" id="email" name="email">
+              <input type="submit" id="submit-btn"><br>
+            </form>
+            <h2>Number of co-maker required: 3</h2>
+            <table style="width: 100%;">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+              </tr>
+            </table>
+          </div>
+          <!-- End Step 3 -->
+
+          <!-- Start Step 4 -->
+          <div id="step-4">
+            <h2 class="StepTitle">Review the details.</h2>
+            <table class="step4-table">
+              <h2>Financial Loan</h2>
+              <tr>
+                <td>Status</td>
+                <td>Approved</td>
+              </tr>
+              <tr>
+                <td>Loan Type</td>
+                <td>Financial Loan</td>
+              </tr>
+              <tr>
+                <td>Application Date</td>
+                <td>September 9, 2020</td>
+              </tr>
+              <tr>
+                <td>Company Name</td>
+                <td>PLDT Telescoop Subsidiary</td>
+              </tr>
+              <tr>
+                <td>Loan Amount</td>
+                <td>PHP 16,000.00</td>
+              </tr>
+              <tr>
+                <td>No. of Months Payabale</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Monthly Amortization</td>
+                <td>738.32</td>
+              </tr>
+              <tr>
+                <td>Gross Loan</td>
+                <td></td>
+              <tr>
+                <td>Loan Type</td>
+                <td>Financial Loan</td>
+              </tr>
+              <tr>
+                <td>Net Proceeds</td>
+                <td></td>
+              </tr>
+            </table>
+            <table class="step4-table">
+              <h2>Co-Maker Information</h2>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <td>Dayle</td>
+                <td>Igno</td>
+                <td>digno@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Hamill</td>
+                <td>Marinda</td>
+                <td>hmarinda@gmail.com</td>
+              </tr>
+            </table>
+            <form class="terms" action="#" method="POST">
+
+              <input type="checkbox" name="terms-box" value="check" id="agree" /> I have read and agree to the Terms and Conditions
+
+            </form>
+          </div>
+          <!-- End Step 4 -->
+        </div>
+        <!-- End SmartWizard Content 1 -->
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
